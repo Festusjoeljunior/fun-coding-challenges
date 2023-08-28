@@ -6,19 +6,16 @@ import java.util.Map;
 
 public class SolutionOne {
 
-
-private static final int HOME_TEAM_WON = 1;
-
     // O(n) time when n is the number of competitions, O(k) space where k is the number of teams in the scores hashtable
     public String tournamentWinner(ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results) {
         Map<String, Integer> teamScores = new HashMap<>();
 
-        for(int i=0; i<competitions.size(); i++) {
+        for (int i = 0; i < competitions.size(); i++) {
             ArrayList<String> competition = competitions.get(i);
             String homeTeam = competition.get(0);
             String awayTeam = competition.get(1);
 
-            String winner = results.get(1) == 0 ? awayTeam : homeTeam;
+            String winner = results.get(i) == 0 ? awayTeam : homeTeam;
 
             teamScores.put(winner, teamScores.getOrDefault(winner, 0) + 3);
         }
@@ -26,12 +23,13 @@ private static final int HOME_TEAM_WON = 1;
         String winner = "";
         int maxScore = 0;
 
-        for(Map.Entry<String, Integer> entry : teamScores.entrySet()) {
+        for (Map.Entry<String, Integer> entry : teamScores.entrySet()) {
             if (entry.getValue() > maxScore) {
                 maxScore = entry.getValue();
                 winner = entry.getKey();
             }
         }
+
         return winner;
     }
 
