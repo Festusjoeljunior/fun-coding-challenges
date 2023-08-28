@@ -4,19 +4,19 @@ import java.util.Arrays;
 
 public class SolutionThree {
 
+    // O(nlog(n)) time | O(1) space
     public static int[] twoNumberSum(int[] array, int targetSum) {
         Arrays.sort(array);
-        int firstPointer = 0;
-        int secondPointer = array.length-1;
-
-        while (firstPointer < secondPointer) {
-            int currentSum = array[firstPointer] + array[secondPointer];
+        int leftPointer = 0;
+        int rightPointer = array.length -1;
+        while (leftPointer < rightPointer) {
+            int currentSum = array[leftPointer] + array[rightPointer];
             if (currentSum == targetSum) {
-                return new int[]{array[firstPointer], array[secondPointer]};
+                return new int[] {array[leftPointer], array[rightPointer]};
             } else if (currentSum < targetSum) {
-                firstPointer++;
+                leftPointer++;
             } else {
-                secondPointer--;
+                rightPointer--;
             }
         }
         return new int[0];
