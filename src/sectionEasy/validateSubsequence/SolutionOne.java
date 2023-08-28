@@ -14,6 +14,8 @@ public class SolutionOne {
             }
             arrayIndex++;
         }
+        // if the sequence index is equal to the size of the sequence list, then we have
+        // traversed through the whole sequence list
         return sequenceIndex == sequence.size();
     }
 

@@ -2,9 +2,10 @@ package sectionEasy.twoNumberSum;
 
 public class SolutionOne {
 
+    // O(n^2) time | O(1) space
     public static int[] twoNumberSum(int[] array, int targetSum) {
         for(int i=0; i<array.length; i++) {
-            for(int j=1+1; j<array.length; j++) {
+            for(int j=i+1; j<array.length; j++) {
                 int firstNumber = array[i];
                 int secondNumber = array[j];
                 if (firstNumber + secondNumber == targetSum) {

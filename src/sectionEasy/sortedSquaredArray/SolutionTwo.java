@@ -7,19 +7,19 @@ public class SolutionTwo {
     // O(n) time (due to having to sort the output array) , O(n) space - due to having to create a new output array
     public static int[] sortedSquaredArray(int[] array) {
         int[] result = new int[array.length];
-        int leftIndex = 0;
-        int rightIndex = array.length-1;
+        int smallerValueIndex = 0;
+        int largerValueIndex = array.length -1;
 
         for(int i=array.length-1; i>=0; i--) {
-            int leftSquared = array[leftIndex] * array[leftIndex];
-            int rightSquared = array[rightIndex] * array[rightIndex];
+            int smallValue = array[smallerValueIndex];
+            int largerValue = array[largerValueIndex];
 
-            if (leftSquared > rightSquared) {
-                result[i] = leftSquared;
-                leftIndex++;
+            if (smallValue > largerValue) {
+                result[i] = smallValue * smallValue;
+                smallerValueIndex++;
             } else {
-                result[i] = rightSquared;
-                rightIndex--;
+                result[i] = largerValue * largerValue;
+                largerValueIndex--;
             }
         }
         return result;

@@ -4,6 +4,7 @@ import java.util.Hashtable;
 
 public class SolutionTwo {
 
+    // O(n) time | O(n) space
     public static int[] twoNumberSum(int[] array, int targetSum) {
         Hashtable<Integer, Integer> numbers = new Hashtable<>();
         for(int i=0; i<array.length; i++) {

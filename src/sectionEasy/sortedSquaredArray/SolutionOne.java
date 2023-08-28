@@ -8,7 +8,7 @@ public class SolutionOne {
 
     public static int[] sortedSquaredArray(int[] array) {
         int[] result = new int[array.length];
-        for(int i=0; i< array.length; i++) {
+        for(int i=0; i<array.length; i++) {
             int value = array[i] * array[i];
             result[i] = value;
         }
